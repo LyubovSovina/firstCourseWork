@@ -1,0 +1,1 @@
+let s;matrix=[[1,2,3],[4,5,6],[7,8,10]],free=[1,1,1];for(let e=0;e<3;e++)for(let r=e+1;r<3;r++){d=matrix[r][e]/matrix[e][e];for(let o=e;o<3;o++)matrix[r][o]-=d*matrix[e][o];free[r]-=d*free[e]}for(let e=2;e>=0;e--){d=0;for(let r=e+1;r<3;r++)s=matrix[e][r]*x[r],d+=s;x[e]=(free[e]-d)/matrix[e][e]}console.log(matrix),console.log(free),console.log(x);

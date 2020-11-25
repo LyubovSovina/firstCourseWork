@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Course_work</title>
+
+</head>
+<body>
+
+
+    <!-- <div id="myOverlay" class="overlay">
+        <div class="overlay-content">
+          <h2 class="display-5 mb-4">Форма поиска</h2>
+          <form>
+            <div class="position-relative searchBlock">
+              <input required="required" class="form-control d-inline rounded mt-1 mb-1 d-inline" type="search" placeholder="Поиск">
+              <button class="resetBtn" type="reset" title="Click me to clear the input field"><i class="fas fa-times-circle"></i></button>
+            </div>
+          </form>
+          <button type="button" class="closebtn mt-3 px-3 py-2 border-0 text-white" onclick="closeSearch()">Закрыть</button>
+        </div>
+      </div> -->
+    <!--  -->
+
+      @@include('_mainheader.html')
+
+      <!-- Джамбатрон с картинкой -->
+      @@include('_jumbotron.html')
+    
+      <div class="content container p-2">
+        <div class="row articles">
+          
+          @@include('_main.html')
+    
+          <!-- <div class="col-xl-4 col-md-12 notMarginLR d-block">
+            <h2 class="text-center mb-4">Анонсы</h2>
+            <aside class="notMarginLR">
+              <p class="bg-white rounded p-2"> Etiam porta sem malesuada magna mollis euismod. Cras mattis cossectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed cossectetur</p>
+              <div class="card bg-info">
+                <img class="card-img-top imgAside img-thumbnail" src="img/android.jpg" alt="Card image cap">
+                <div class="card-body text-white">
+                  <p class="card-text">Etiam porta sem malesuada magna mollis euismod. Cras mattis cossectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed cossectetur.</p>
+                  <a href="#" class="btn btn-light">Читать далее</a>
+                </div>
+              </div>
+            </aside>
+          </div> -->
+        </div>
+      
+      </div>
+    
+      @@include('_footer.html') 
+      
+    
+    <!-- scripts files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/loadMoreBtn.min.js"></script>
+    <!-- HelloPreload http://hello-site.ru/preloader/ -->
+    <style type="text/css">#hellopreloader>p{display:none;}#hellopreloader_preload{display: block;position: fixed;z-index: 99999;top: 0;left: 0;width: 100%;height: 100%;min-width: 1000px;background: #22A7F0 url(http://hello-site.ru//main/images/preloads/puff.svg) center center no-repeat;background-size:213px;}</style>
+    <div id="hellopreloader"><div id="hellopreloader_preload"></div><p><a href="http://hello-site.ru">Hello-Site.ru. Бесплатный конструктор сайтов.</a></p></div>
+    <script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05){ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},1150);};</script>
+    <!-- HelloPreload http://hello-site.ru/preloader/ -->
+</body>
+</html>
