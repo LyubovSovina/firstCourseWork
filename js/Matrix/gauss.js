@@ -1,20 +1,22 @@
-matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 10]];
-free = [1, 1, 1];
+let matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 10]];
+let free = [1, 1, 1];
+let x = [];
 let s;
-for (let k = 0; k < 3; k++)
+let n = matrix.length;
+for (let k = 0; k < n; k++)
 {
-    for (let j = k + 1; j < 3; j++)
+    for (let j = k + 1; j < n; j++)
     {
         d = matrix[j][k] / matrix[k][k];
-        for (let i = k; i < 3; i++)
+        for (let i = k; i < n; i++)
             matrix[j][i] -= d * matrix[k][i];
         free[j] -= d * free[k];
     }
 }
-for (let k = 2; k >= 0; k--)
+for (let k = n-1; k >= 0; k--)
 {
     d = 0;
-    for (let j = k + 1; j < 3; j++)
+    for (let j = k + 1; j < n; j++)
     {
         s = matrix[k][j] * x[j];
         d = d + s;
