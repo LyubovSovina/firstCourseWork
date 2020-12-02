@@ -117,11 +117,13 @@ function GetMatrix(n){
 function PrintResult(matr, n){
   let div = document.createDocumentFragment();
   let p1 = document.createElement('p');
-  p1.innerText += 'Смежная матрица - это матрица, состоящая из алгебраических дополнений соответствующих элементов, т.е. вместо элемента стоит его алгебраическое дополнение';
+  p1.innerText += 'Союзная матрица - это матрица, состоящая из алгебраических дополнений соответствующих элементов, т.е. вместо элемента стоит его алгебраическое дополнение';
   let p2 = document.createElement('p');
   p2.innerText += 'Алгебраическое дополнение - это минор, умноженный на (-1) в степени равной сумме номера столбца и строки.';
   let p3 = document.createElement('p');
   p3.innerText += 'Минор - определитель матрицы, полученной путём вычёркивания строки и столбца, в которых расположен элемент, чей минор мы ищем.';
+  let p4 = document.createElement('p');
+  p4.innerText += 'Союзная матрица для данной матрицы равна: '
   let table = document.createElement('table');
   for (var i = 0; i < n; i++) {
     var tr = document.createElement('tr');
@@ -135,6 +137,7 @@ function PrintResult(matr, n){
   div.appendChild(p1);
   div.appendChild(p2);
   div.appendChild(p3);
+  div.appendChild(p4);
   div.appendChild(table);
   document.getElementById("result").appendChild(div);
 }

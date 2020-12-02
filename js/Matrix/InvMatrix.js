@@ -1,12 +1,36 @@
-let matrix = [[]];  
-let det = Determinant(matrixmatrix);
-if (det == 0) console.log(false);
-let N =matrix.length;
-matrix = AdjugateMatrix(matrix);
-for (let i = 0; i < N; i++) {
-    for (let j = 0; j < N; j++) matrix[i][j] /= det; 
+let Size = document.querySelector(".SizeMatrix");
+let N = Size.value;
+let matrix = [];
+CreateMatrix(N);
+Size.oninput = function(){
+  for(let i = 0; i < N; i++){
+    var elem = document.getElementById("str");
+    elem.parentNode.removeChild(elem);
+  }
+  N = Size.value;
+  CreateMatrix(N);
 }
-console.log(matrix);
+let Get = document.querySelector(".Get");
+let count = 0;
+Get.onclick = function(){
+  if(count != 0) {
+    var elem = document.getElementById("result");
+    while (elem.firstChild) {
+      elem.removeChild(elem.firstChild);
+  }
+  }
+  GetMatrix(N);  
+  let det = Determinant(matrix);
+  if (det == 0) PrintError();
+  else{
+    matrix = AdjugateMatrix(matrix);
+  for (let i = 0; i < N; i++) {
+      for (let j = 0; j < N; j++) matrix[i][j] /= det; 
+  }
+  PrintResult(matrix, N);
+  }
+  count++;
+}
 
 function AdjugateMatrix(A) 
 {                                        
@@ -59,4 +83,71 @@ function Determinant(A)   // Используется алгоритм Баре�
      }
     if (exchanges%2) return -B[N-1][N-1];
     else return B[N-1][N-1];
+}
+function CreateMatrix(n) {
+  /* createDocumentFragment создает фрагмент документа, но он не будет сразу же вставлен на страницу
+      благодаря этому, мы не будем совершать множество операций, по вставке на страницу строк и ячеек,
+      а соберем нужный нам фрагмент, и за один раз вставим все нужные элементы 
+      совершить одну вставку  гораздо быстрее и эффективнее, так как при каждом изменение страницы, браузер вынужден перерисовывать ее полностью
+  */
+  var table = document.createDocumentFragment();
+  for (var i = 0; i < n; i++) {
+      var tr = document.createElement('tr');
+      tr.id = 'str';
+      for(var j = 0; j < n; j++) {
+          var td = document.createElement('td');
+          var input=document.createElement('input');
+          input.type = 'number';
+          input.className = 'Elements';
+          input.value = null;
+          td.appendChild(input);
+          tr.appendChild(td);
+      }
+      table.appendChild(tr);
+  }
+  document.getElementById('matrix').appendChild(table);
+}
+
+function GetMatrix(n){
+  for(let i = 0; i < n; i++){
+    matrix[i] = [];
+    for(let j = 0; j < n; j++){
+      let array = document.getElementsByClassName('Elements')[i*n+j];
+      matrix[i][j] = array.value;
+    }
+  }
+}
+function PrintError(){
+  let div = document.createDocumentFragment();
+  let p1 = document.createElement('p');
+  p1.innerText += 'Данная матрица не имеет обратной, т.к. её определитель равен 0.';
+  div.appendChild(p1);
+  document.getElementById("result").appendChild(div);
+}
+function PrintResult(matr, n){
+  let div = document.createDocumentFragment();
+  let p1 = document.createElement('p');
+  p1.innerText += 'Обратная матрица — такая матрица, при умножении на которую исходная матрица даёт в результате единичную матрицу.';
+  let p2 = document.createElement('p');
+  p2.innerText += 'Квадратная матрица обратима тогда и только тогда, когда она невырождена, то есть её определитель не равен нулю.';
+  let p3 = document.createElement('p');
+  p3.innerText += 'Для неквадратных матриц и вырожденных матриц обратных матриц не существует.';
+  let p4 = document.createElement('p');
+  p4.innerText += 'Обратная матрица для данной матрицы равна: '
+  let table = document.createElement('table');
+  for (var i = 0; i < n; i++) {
+    var tr = document.createElement('tr');
+    for(var j = 0; j < n; j++) {
+        var td = document.createElement('td');
+        td.innerHTML = matr[i][j];
+        tr.appendChild(td);
+    }
+    table.appendChild(tr);
+  }
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+  div.appendChild(p4);
+  div.appendChild(table);
+  document.getElementById("result").appendChild(div);
 }
