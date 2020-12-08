@@ -1,28 +1,28 @@
 let Size1 = document.querySelector(".SizeMatrixm");
-let m = Size1.value; m*=1;
+let m = Size1.value;
 let Size2 = document.querySelector(".SizeMatrixn");
-let n = Size2.value; n*=1;
+let n = Size2.value;
 let matrix1 = [];
 let matrix2 = [];
 CreateMatrix(m,n, "matrix1", "Elements1");
-CreateMatrix(n,m, "matrix2", "Elements2");
+CreateMatrix(m,n, "matrix2", "Elements2");
 Size1.oninput = function(){
-  for(let i = 0; i < m+n; i++){
+  for(let i = 0; i < 2*m; i++){
     var elem = document.getElementById("str");
     elem.parentNode.removeChild(elem);
   }
-  m = Size1.value; m*=1;
+  m = Size1.value;
   CreateMatrix(m,n, "matrix1", "Elements1");
-  CreateMatrix(n,m, "matrix2", "Elements2");
+  CreateMatrix(m,n, "matrix2", "Elements2");
 }
 Size2.oninput = function(){
-  for(let i = 0; i < n+m; i++){
+  for(let i = 0; i < 2*m; i++){
     var elem = document.getElementById("str");
     elem.parentNode.removeChild(elem);
   }
-  n = Size2.value;n*=1;
+  n = Size2.value;
   CreateMatrix(m,n, "matrix1", "Elements1");
-  CreateMatrix(n,m, "matrix2", "Elements2");
+  CreateMatrix(m,n, "matrix2", "Elements2");
 }
 let Get = document.querySelector(".Get");
 let count = 0; 
@@ -35,16 +35,15 @@ Get.onclick = function(){
   }
   GetMatrix(m,n); 
   let matrRes = [];
-  for (let i = 0; i < m; i++) matrRes[i] = [];
-  for (let k = 0; k < m; k++) {
-    for (let i = 0; i < m; i++) {
-      let t = 0;
-      for (let j = 0; j < n; j++) 
-        t += matrix1[i][j]*matrix2[j][k];
-      matrRes[i][k] = t;
+  for (let i = 0; i < m; i++) {
+    matrRes[i] = [];
+    for (let j = 0; j < n; j++) {
+      matrix1[i][j]*=1; matrix2[i][j]*=1;
+      matrRes[i][j] = matrix1[i][j] - matrix2[i][j];
     }
+    
   }
-  PrintResult(matrRes, m);
+  PrintResult(matrRes, m, n);
   count++;
 }
 function CreateMatrix(m,n, id, cl) {
@@ -78,25 +77,25 @@ for(let i = 0; i < m; i++){
     matrix1[i][j] = array.value;
   }
 }
-for(let i = 0; i < n; i++){
+for(let i = 0; i < m; i++){
   matrix2[i] = [];
-  for(let j = 0; j < m; j++){
+  for(let j = 0; j < n; j++){
     let array = document.getElementsByClassName('Elements2')[i*n+j];
     matrix2[i][j] = array.value;
   }
 }
 }
 
-function PrintResult(matr, m){
+function PrintResult(matr, m, n){
   let div = document.createDocumentFragment();
   let p1 = document.createElement('p');
-  p1.innerText += 'Элементы новой матрицы получаются из элементов старых матриц путём сложения произведений элементов соответствующих строки матрицы А и столбца матрицы В. Матрицы A и B могут быть перемножены, если они совместимы в том смысле, что число столбцов матрицы A равно числу строк B.';
+  p1.innerText += 'Разностью матриц одинакового размера называется матрица того же размера, каждый элемент которой равен разности соответствующих элементов исходных матриц.';
   let p2 = document.createElement('p');
-  p2.innerText += 'Произведение исходных матриц равно: '
+  p2.innerText += 'Разность исходных матриц равна: '
   let table1 = document.createElement('table');
   for (var i = 0; i < m; i++) {
     var tr1 = document.createElement('tr');
-    for(var j = 0; j < m; j++) {
+    for(var j = 0; j < n; j++) {
         var td1 = document.createElement('td');
         td1.innerHTML = matr[i][j];
         tr1.appendChild(td1);
