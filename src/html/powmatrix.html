@@ -13,8 +13,23 @@
     <!-- header -->
     @@include('_header.html')
 
+    <div class="content_calc container">
+        <div>
+          <p>Введите размер матрицы:
+            <input type = "number" value= 3 class = "SizeMatrix form-control col-4 rounded col-lg-3" /> 
+          </p>
+          <p>Введите степень, в которую хотите возвести матрицу:
+            <input type = "number" value= 1 class = "Number form-control col-4 rounded col-lg-3" /> 
+          </p>
+        </div>
+        <table id="matrix" class="table bg-primary rounded table-responsive"></table>
+        <button class = "Get btn btn-lg btn-outline-primary">Высчитать</button>
+        <div id = "result"></div>
+      </div>
 
     <!-- footer -->
     @@include('_footer.html')
+
+    <script src = "../js/PowMatrix.js"></script>
 </body>
 </html>

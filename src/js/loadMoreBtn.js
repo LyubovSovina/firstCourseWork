@@ -72,52 +72,52 @@
 // рабочий варик
 
 let article_1 = {
-'photo': '../img/kramer.jpeg',
-'title': 'Умножение матриц',
+'photo': '../img/matrix_1.png',
+'title': 'Союзная матрица',
 'intro': 'Какой-то текст',
-'href': ''
+'href': 'html/adjmatrix.html'
 };
 let article_2 = {
-'photo': '../img/kramer.jpeg',
-'title': 'Возведение в степень',
+'photo': '../img/matrix_1.png',
+'title': 'Определитель матрицы',
 'intro': 'Какой-то текст',
-'href': ''
+'href': 'html/determinant.html'
 };
 let article_3 = {
-'photo': '../img/kramer.jpeg',
+'photo': '../img/matrix_1.png',
 'title': 'Ранг матрицы',
 'intro': 'Какой-то текст',
-'href': ''
+'href': 'html/rangmatrix.html'
 };
 let article_4 = {
-'photo': '../img/kramer.jpeg',
+'photo': '../img/matrix_1.png',
 'title': 'Сумма матриц',
 'intro': 'Какой-то текст',
-'href': ''
+'href': 'html/summatrix.html'
 };
 let article_5 = {
-'photo': '../img/kramer.jpeg',
+'photo': '../img/matrix_1.png',
 'title': 'Транспозиция матрицы',
 'intro': 'Какой-то текст',
-'href': ''
+'href': 'html/transposition.html'
 };
 let article_6 = {
-'photo': '../img/kramer.jpeg',
-'title': 'определитель матрицы',
+'photo': '../img/matrix_1.png',
+'title': 'Умножение матрицы на число',
 'intro': 'Какой-то текст.',
-'href': ''
+'href': 'html/nummatrix.html'
 };
 let article_7 = {
-'photo': '../img/kramer.jpeg',
-'title': 'Какой-то текст',
+'photo': '../img/matrix_1.png',
+'title': 'Вычитание матриц',
 'intro': 'Какой-то текст',
-'href': ''
+'href': 'html/submatrix.html'
 };
 let article_8 = {
 'photo': '../img/kramer.jpeg',
 'title': 'Какой-то текст',
 'intro': 'Какой-то текст.',
-'href': ''
+'href': '#'
 };
 
 // Переменные
@@ -130,7 +130,7 @@ $(".js-buttonLoadMore").on("click", function () {
 	for(let i = start; i < articles.length; i++) {
 		if(3 + start < i) // Всегда отображаем лишь по 4 статьи, поэтому если больше 3, то выходим из цикла
 			break;
-		htmlToInsert += "<div class='card col-md-5 col-12 notMarginLR'><img src='" + articles[i].photo + "' class='card-img-top' alt='" + articles[i].title + "'><div class='card-body'><h5 class='card-title'>" + articles[i].title + "</h5><p class='card-text'>" + articles[i].intro + "</p><a href='#' class='btn btn-primary'>Читать далее</a></div></div>";
+		htmlToInsert += "<div class='card col-md-5 col-12 notMarginLR'><div class='scale'><img src='" + articles[i].photo + "' class='card-img-top' alt='" + articles[i].title + "'></div><div class='card-body'><h5 class='card-title'>" + articles[i].title + "</h5><p class='card-text'>" + articles[i].intro + "</p><a href='" + articles[i].href + "' class='btn btn-primary'>Читать далее</a></div></div>";
 
 		// Если индекс сейчас равен количеству элементов и минус один, то мы скрываем кнопку загрузить больше
 		// if(i == articles.length - 1) {

@@ -13,8 +13,26 @@
     <!-- header -->
     @@include('_header.html')
 
+    <div class="content_calc container">
+        <div>
+          <p>Введите количество строк матриц:
+            <input type = "number" value= 3 class = "SizeMatrixm form-control col-4 rounded col-lg-3" /> 
+          </p>
+          <p>Введите количество столбцов матриц:
+            <input type = "number" value= 3 class = "SizeMatrixn form-control col-4 rounded col-lg-3" /> 
+          </p>
+        </div>
+        <p>Введите первую матрицу:</p>
+        <table id="matrix1" class="table bg-primary rounded table-responsive"></table>
+        <p>Введите вторую матрицу: </p>
+        <table id="matrix2" class="table bg-primary rounded table-responsive"></table>
+        <button class = "Get btn btn-lg btn-outline-primary">Высчитать</button>
+        <div id = "result"></div>
+      </div>
 
     <!-- footer -->
     @@include('_footer.html')
+
+    <script src = "../js/SumMatrix.js"></script>
 </body>
 </html>
