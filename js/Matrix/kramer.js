@@ -29,7 +29,7 @@ for(let i=0; i<N; ++i){
     GetMatrix(N);
     x[i] = det2(N, matrix, i, free)/d;
 }
-PrintResult(matrix, free, x, N);
+PrintResult(d, x, N);
   count++;
 }
 
@@ -114,32 +114,13 @@ function CreateMatrix(m) {
       free[i] = array.value;
     }
   }
-  function PrintResult(matr, free, x, m){
+  function PrintResult(d, x, m){
     let div = document.createDocumentFragment();
     let p1 = document.createElement('p');
     p1.innerText += 'Метод Крамера (правило Крамера) — способ решения систем линейных алгебраических уравнений с числом уравнений равным числу неизвестных с ненулевым главным определителем матрицы коэффициентов системы (причём для таких уравнений решение существует и единственно).';
     let p2 = document.createElement('p');
-    p2.innerText += 'Преобразованная матрица равна: '
-    let table1 = document.createElement('table');
-    for (var i = 0; i < m; i++) {
-      var tr1 = document.createElement('tr');
-      for(var j = 0; j < m; j++) {
-          var td1 = document.createElement('td');
-          td1.innerHTML = matr[i][j];
-          tr1.appendChild(td1);
-      }
-      table1.appendChild(tr1);
-    }
-    let p3 = document.createElement('p');
-    p3.innerText += 'Матрица свободных членов равна: '
-    let table2 = document.createElement('table');
-    var tr2 = document.createElement('tr');
-    for (var i = 0; i < m; i++) {
-      var td2 = document.createElement('td');
-      td2.innerHTML = free[i];
-      tr2.appendChild(td2);
-    }
-    table2.appendChild(tr2);
+    p2.innerText += 'Определитель матрицы равен: ';
+    p2.innerHTML += d;
     let p4 = document.createElement('p');
     p4.innerText += 'Решение данной системы линейных уравнений: '
     let table3 = document.createElement('table');
@@ -153,9 +134,6 @@ function CreateMatrix(m) {
     table3.appendChild(tr3);
     div.appendChild(p1);
     div.appendChild(p2);
-    div.appendChild(table1);
-    div.appendChild(p3);
-    div.appendChild(table2);
     div.appendChild(p4);
     div.appendChild(table3);
     document.getElementById("result").appendChild(div);
