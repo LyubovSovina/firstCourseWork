@@ -72,49 +72,49 @@
 // рабочий варик
 
 let article_1 = {
-'photo': '../img/matrix_1.png',
+'photo': 'img/matrix_1.png',
 'title': 'Союзная матрица',
 'intro': 'Какой-то текст',
 'href': 'html/adjmatrix.html'
 };
 let article_2 = {
-'photo': '../img/matrix_1.png',
+'photo': 'img/matrix_1.png',
 'title': 'Определитель матрицы',
 'intro': 'Какой-то текст',
 'href': 'html/determinant.html'
 };
 let article_3 = {
-'photo': '../img/matrix_1.png',
+'photo': 'img/matrix_1.png',
 'title': 'Ранг матрицы',
 'intro': 'Какой-то текст',
 'href': 'html/rangmatrix.html'
 };
 let article_4 = {
-'photo': '../img/matrix_1.png',
+'photo': 'img/matrix_1.png',
 'title': 'Сумма матриц',
 'intro': 'Какой-то текст',
 'href': 'html/summatrix.html'
 };
 let article_5 = {
-'photo': '../img/matrix_1.png',
+'photo': 'img/matrix_1.png',
 'title': 'Транспозиция матрицы',
 'intro': 'Какой-то текст',
 'href': 'html/transposition.html'
 };
 let article_6 = {
-'photo': '../img/matrix_1.png',
+'photo': 'img/matrix_1.png',
 'title': 'Умножение матрицы на число',
 'intro': 'Какой-то текст.',
 'href': 'html/nummatrix.html'
 };
 let article_7 = {
-'photo': '../img/matrix_1.png',
+'photo': 'img/matrix_1.png',
 'title': 'Вычитание матриц',
 'intro': 'Какой-то текст',
 'href': 'html/submatrix.html'
 };
 let article_8 = {
-'photo': '../img/kramer.jpeg',
+'photo': 'img/kramer.jpeg',
 'title': 'Какой-то текст',
 'intro': 'Какой-то текст.',
 'href': '#'

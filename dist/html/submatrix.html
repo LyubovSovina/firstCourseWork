@@ -1,84 +1,1 @@
-<<<<<<< HEAD
 <!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link rel="stylesheet" href="../css/bootstrap.min.css">    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">    <link rel="stylesheet" href="../css/style.min.css">    <title>rangmatrix</title></head><body>    <!-- header -->    <header class="bg-white my-4 container border rounded shadow">    <div class="container p-2">      <div class="row pl-1 pr-1">        <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-3 transformImg">          <a href="http://www.ivanovo.ac.ru/"><picture><source srcset="../img/ivgu_logo.webp" type="image/webp"><img src="../img/ivgu_logo.png" alt="" class="logoImg"></picture></a>        </div>        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-3 font-weight-bolder logoTxt">          <p class="d-inline pt-5 font-weight-bold h3">Online</p>          <p class="d-inline calculator h4">Calculator</p>        </div>        <div class="my-2  col-xl-6 offset-xl-4 col-lg-6 offset-lg-4 offset-md-4 col-md-5 offset-sm-6 col-md-3 offset-4 col-4 d-flex justify-content-center align-items-center">          <a href="" class="btn btn-outline-light text-dark border mr-2" role="button" aria-disabled="true">Главная</a>          <a href="http://ivanovo.ac.ru/about_the_university/faculty/7155/" class="btn btn-outline-light text-dark border mr-2" role="button" aria-disabled="true">ИМИТиЕН</a>          <a href="" class="btn btn-outline-light text-dark border mr-2" role="button" aria-disabled="true">Контакты</a>        </div>      </div>    </div></header>    <div class="content_calc container">        <div>          <p>Введите количество строк матриц:            <input type = "number" value= 3 class = "SizeMatrixm form-control col-4 rounded col-lg-3" />           </p>          <p>Введите количество столбцов матриц:            <input type = "number" value= 3 class = "SizeMatrixn form-control col-4 rounded col-lg-3" />           </p>        </div>        <p>Введите первую матрицу:</p>        <table id="matrix1" class="table bg-primary rounded table-responsive"></table>        <p>Введите вторую матрицу: </p>        <table id="matrix2" class="table bg-primary rounded table-responsive"></table>        <button class = "Get btn btn-lg btn-outline-primary">Высчитать</button>        <div id = "result"></div>      </div>    <!-- footer -->    <footer class="container border rounded-top mt-4 shadow bg-white">    <div class="authors row d-flex justify-content-center align-items-center">        <div class="col-5">            <h6 class="my-3 text-center">Совина Любовь Михайловна</h6>        </div>        <div class="col-2"></div>        <div class="col-5">            <h6 class="my-3 text-center">Сергеев Максим Олегович</h6>        </div>    </div>    <div class="row d-flex justify-content-around">        <div class="social col-4 d-flex justify-content-center align-items-center">            <a href="https://vk.com/lubov_sovina"><div><i class="fab fa-vk px-3"></i></div></a>            <a href="https://www.instagram.com/lubov_sovina/"><div><i class="fab fa-instagram px-3"></i></div></a>        </div>        <h5 class="text-center py-2 my-4 bg-white col-4">Курсовая работа &copy;</h5>        <div class="social col-4 d-flex justify-content-center align-items-center">            <a href="https://vk.com/arah3lm"><div><i class="fab fa-vk px-3"></i></div></a>            <a href="https://www.instagram.com/arah3lm/"><div><i class="fab fa-instagram px-3"></i></div></a>        </div>    </div>      </footer>    <script src = "../js/SubMatrix.js"></script></body></html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="../css/style.min.css">
-    <title>gauss</title>
-</head>
-<body>
-    <!-- header -->
-    <header class="bg-white my-4 container border rounded shadow">
-    <div class="container p-2">
-      <div class="row pl-1 pr-1">
-        <div class="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-3 transformImg">
-          <a href="http://www.ivanovo.ac.ru/"><picture><source srcset="../img/ivgu_logo.webp" type="image/webp"><img src="../img/ivgu_logo.png" alt="" class="logoImg"></picture></a>
-        </div>
-        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-3 font-weight-bolder logoTxt">
-          <p class="d-inline pt-5 font-weight-bold h3">Online</p>
-          <p class="d-inline calculator h4">Calculator</p>
-        </div>
-        <div class="my-2  col-xl-6 offset-xl-4 col-lg-6 offset-lg-4 offset-md-4 col-md-5 offset-sm-6 col-md-3 offset-4 col-4 d-flex justify-content-center align-items-center">
-          <a href="" class="btn btn-outline-light text-dark border mr-2" role="button" aria-disabled="true">Главная</a>
-          <a href="http://ivanovo.ac.ru/about_the_university/faculty/7155/" class="btn btn-outline-light text-dark border mr-2" role="button" aria-disabled="true">ИМИТиЕН</a>
-          <a href="" class="btn btn-outline-light text-dark border mr-2" role="button" aria-disabled="true">Контакты</a>
-        </div>
-      </div>
-    </div>
-</header>
-
-<div class="content_calc ">
-  <div>
-    <p>Введите количество строк матриц:
-      <input type = "number" value= 3 class = "SizeMatrixm" /> 
-    </p>
-    <p>Введите количество столбцов матриц:
-      <input type = "number" value= 3 class = "SizeMatrixn" /> 
-    </p>
-  </div>
-  <p>Введите первую матрицу:</p>
-  <table id="matrix1"></table>
-  <p>Введите вторую матрицу: </p>
-  <table id="matrix2"></table>
-  <button class = "Get">Высчитать</button>
-  <div id = "result"></div>
-</div>
-
-
-    <!-- footer -->
-    <footer class="container border rounded-top mt-4 shadow bg-white">
-
-    <div class="authors row d-flex justify-content-center align-items-center">
-        <div class="col-5">
-            <h6 class="my-3 text-center">Совина Любовь Михайловна</h6>
-        </div>
-        <div class="col-2"></div>
-        <div class="col-5">
-            <h6 class="my-3 text-center">Сергеев Максим Олегович</h6>
-        </div>
-    </div>
-
-    <div class="row d-flex justify-content-around">
-        <div class="social col-4 d-flex justify-content-center align-items-center">
-            <a href="https://vk.com/lubov_sovina"><div><i class="fab fa-vk px-3"></i></div></a>
-            <a href="https://www.instagram.com/lubov_sovina/"><div><i class="fab fa-instagram px-3"></i></div></a>
-        </div>
-        <h5 class="text-center py-2 my-4 bg-white col-4">Курсовая работа &copy;</h5>
-        <div class="social col-4 d-flex justify-content-center align-items-center">
-            <a href="https://vk.com/arah3lm"><div><i class="fab fa-vk px-3"></i></div></a>
-            <a href="https://www.instagram.com/arah3lm/"><div><i class="fab fa-instagram px-3"></i></div></a>
-        </div>
-    </div>
-    
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src = "/WebProgramming/js/Matrix/SubMatrix.js"></script>
-</body>
-</html>
->>>>>>> 2160c36d09cd73da6c68e0be4dcc6d6e1d58abe9
