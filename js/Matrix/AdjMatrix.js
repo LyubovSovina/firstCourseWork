@@ -1,5 +1,5 @@
 let Size = document.querySelector(".SizeMatrix");
-let N = Size.value;
+let N = Size.value; // 
 let matrix = [];
 CreateMatrix(N);
 Size.oninput = function(){
